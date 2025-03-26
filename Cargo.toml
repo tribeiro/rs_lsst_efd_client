@@ -2,12 +2,14 @@
 name = "lsst_efd_client"
 version = "0.1.0"
 edition = "2021"
+description = "A rust version of the lsst_efd_client library.."
+license = "MIT"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-reqwest = "0.11.23"
-serde = "1.0.196"
-serde_derive = "1.0.196"
-serde_json = "1.0.112"
+reqwest = "0.12.7"
+serde = "1.0.210"
+serde_derive = "1.0.210"
+serde_json = "1.0.128"
 url = "2.5.0"
