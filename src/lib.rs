@@ -24,6 +24,16 @@ impl EfdAuth {
         Ok(efd_auth)
     }
 
+    pub fn new_blocking(efd_name: &str) -> Result<EfdAuth, Box<dyn Error>> {
+        let url = format!("https://roundtable.lsst.codes/segwarides/creds/{efd_name}");
+        let response = reqwest::blocking::get(&url)?;
+
+        let response_text = response.text()?;
+        let efd_auth: EfdAuth = serde_json::from_str(&response_text)?;
+
+        Ok(efd_auth)
+    }
+
     pub fn get_host(&self) -> &str {
         &self.host
     }
